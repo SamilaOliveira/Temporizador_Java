@@ -12,26 +12,21 @@ import javax.swing.JFormattedTextField;
  */
 public class VisuAgenda extends javax.swing.JFrame {
     
-    private String texto;
-
-   // String texto;
 
     /**
      * Creates new form VisuAgenda
      */
-    public VisuAgenda(String FilePath) {
+    public VisuAgenda(String texto) {
         initComponents();
-        
-    
-        
-       // textArea.setEditable(false);
-        
-     //   this.texto = text;
+        this.textArea.setText(texto);
+        this.textArea.setEditable(false);
     }
     
     public void setText(String text) {
-        textArea.setText(text);
-        textArea.setEditable(false);
+        
+        //textArea.setText(this.);
+        //textArea.setVisible(true);
+        //textArea.setEditable(false);
     }
 
     /**
@@ -50,13 +45,14 @@ public class VisuAgenda extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(51, 51, 51));
         jLabel1.setText("Agenda");
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/CSN_rodapé.png"))); // NOI18N
 
         textArea.setColumns(20);
+        textArea.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         textArea.setRows(5);
         jScrollPane1.setViewportView(textArea);
 
@@ -80,8 +76,8 @@ public class VisuAgenda extends javax.swing.JFrame {
                 .addGap(16, 16, 16)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 311, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 

@@ -16,6 +16,7 @@ import javax.swing.JFrame;
 import javax.swing.JTextField;
 import javax.swing.JTextPane;
 import javax.swing.Timer;
+import service.ReadFileService;
 
 /**
  *
@@ -302,7 +303,7 @@ public class Panel extends javax.swing.JFrame {
         jMenu1.setText("Agenda");
 
         VisuAgenda.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.SHIFT_DOWN_MASK));
-        VisuAgenda.setText("Criar/Visualizar Agenda");
+        VisuAgenda.setText("Visualizar Agenda");
         VisuAgenda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 VisuAgendaActionPerformed(evt);
@@ -454,35 +455,16 @@ public class Panel extends javax.swing.JFrame {
     }//GEN-LAST:event_EditarEmpresaActionPerformed
 
     private void VisuAgendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VisuAgendaActionPerformed
-       /* VisuAgenda agenda = null;
-        File file = new File(System.getProperty("java.io.tmpdir") + File.separator + "agenda.txt");
-        try{
-            if(file.exists() && file.canRead()){
-            BufferedReader br = new BufferedReader(new FileReader(file));
-            
-            StringBuilder builder = new StringBuilder();
-            String line;
-            while((line = br.readLine()) != null){
-                builder.append(line);
-            }
-               
-            
-             agenda = new VisuAgenda(builder.toString());
-             System.out.println("TEXTO: " + builder);
-                
-            }
-        }catch (Exception e){
-            e.printStackTrace();
-        } */
-        AgendaTeste at = new AgendaTeste();
-        at.setVisible(true);
-       
+       VisuAgenda agenda = new VisuAgenda(new ReadFileService().read());
+        
+      //  AgendaTeste at = new AgendaTeste();
+        agenda.setVisible(true);
        
     }//GEN-LAST:event_VisuAgendaActionPerformed
 
     private void EdiAgendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EdiAgendaActionPerformed
 
-        Agenda ag = new Agenda();
+        Agenda ag = new Agenda(new ReadFileService().read());
         ag.setVisible(true);
     }//GEN-LAST:event_EdiAgendaActionPerformed
 

@@ -15,19 +15,16 @@ import javax.swing.JFormattedTextField;
  */
 public class Agenda extends javax.swing.JFrame {
 
-    private String textoSalvo;
+    
 
     /**
      * Creates new form Agenda
      */
-    public Agenda() {
+    public Agenda(String textoSalvo) {
         initComponents();
+        this.txtArea.setText(textoSalvo);
 
         //String texto = jTextArea1.getText();
-    }
-
-    public String getTextoSalvo() {
-        return textoSalvo;
     }
 
     /**
@@ -98,7 +95,10 @@ public class Agenda extends javax.swing.JFrame {
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/CSN_rodapé.png"))); // NOI18N
 
+        txtArea.setBackground(new java.awt.Color(255, 255, 255));
         txtArea.setColumns(20);
+        txtArea.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        txtArea.setForeground(new java.awt.Color(0, 0, 0));
         txtArea.setRows(5);
         jScrollPane1.setViewportView(txtArea);
 
@@ -109,22 +109,22 @@ public class Agenda extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel2))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(19, 19, 19)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addContainerGap()
+                            .addComponent(limparAgenda)
+                            .addGap(18, 18, 18)
+                            .addComponent(salvarAgenda, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(limparAgenda)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(salvarAgenda, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addContainerGap()
+                                .addComponent(jLabel2))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(379, 379, 379))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(19, 19, 19)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 472, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(19, 19, 19)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 472, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -145,7 +145,7 @@ public class Agenda extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void limparAgendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_limparAgendaActionPerformed
-        //jTextArea1.setText("");
+        txtArea.setText("");
     }//GEN-LAST:event_limparAgendaActionPerformed
 
     private void salvarAgendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salvarAgendaActionPerformed
@@ -173,6 +173,7 @@ public class Agenda extends javax.swing.JFrame {
             throw new RuntimeException("Cagou! " + e.getLocalizedMessage());
         }
 
+        this.setVisible(false);
     }//GEN-LAST:event_salvarAgendaActionPerformed
 
     private void formComponentAdded(java.awt.event.ContainerEvent evt) {//GEN-FIRST:event_formComponentAdded
@@ -209,7 +210,7 @@ public class Agenda extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Agenda().setVisible(true);
+                new Agenda("").setVisible(true);
             }
         });
     }
