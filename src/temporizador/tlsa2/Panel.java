@@ -2,6 +2,8 @@ package temporizador.tlsa2;
 
 import java.awt.Color;
 import static java.awt.Color.RED;
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.BufferedReader;
@@ -12,10 +14,12 @@ import java.text.SimpleDateFormat;
 //import java.util.Date;
 import javax.swing.ImageIcon;
 import javax.swing.JComboBox;
+import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.JTextField;
 import javax.swing.JTextPane;
 import javax.swing.Timer;
+import javax.swing.plaf.basic.BasicInternalFrameUI;
 import service.ReadFileService;
 
 /**
@@ -37,8 +41,11 @@ public class Panel extends javax.swing.JFrame {
         this.setIconImage(new javax.swing.ImageIcon(getClass().getResource("/images/icone-TLSA.jpg")).getImage());
         SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
       //  dataLabel.setText(formato.format(dataSistema));
-        
-        
+      
+      //jInternalFrame1.setUndecorated(true);
+      
+      //código para executar o programa em tela cheia
+      //setExtendedState(MAXIMIZED_BOTH); 
               
         timer = new Timer(1000, new ActionListener() {
             @Override
@@ -89,8 +96,18 @@ public class Panel extends javax.swing.JFrame {
                 }
             }
         });
+        // Deixa invisivel a barra de título do internal frame
+        jInternalFrame1.setUI(new BasicInternalFrameUI(jInternalFrame1) {
+            public void installUI(JComponent c) {
+                super.installUI(c);
+                ((javax.swing.plaf.basic.BasicInternalFrameUI) this).setNorthPane(null);
+            }
+        });
+        
+        jInternalFrame1.setBorder(null); // retira as bordas 
         
     }
+    
     
 
     /**
@@ -101,6 +118,7 @@ public class Panel extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        java.awt.GridBagConstraints gridBagConstraints;
 
         jRadioButtonMenuItem1 = new javax.swing.JRadioButtonMenuItem();
         jRadioButtonMenuItem2 = new javax.swing.JRadioButtonMenuItem();
@@ -112,21 +130,23 @@ public class Panel extends javax.swing.JFrame {
         jMenuBar2 = new javax.swing.JMenuBar();
         jMenu2 = new javax.swing.JMenu();
         jMenu4 = new javax.swing.JMenu();
-        jLabel1 = new javax.swing.JLabel();
-        jButtonIniciar = new javax.swing.JButton();
-        jButtonPausar = new javax.swing.JButton();
-        jButtonReiniciar = new javax.swing.JButton();
-        hoursField = new javax.swing.JTextFieldSomenteNumeros(2);
+        jFrame1 = new javax.swing.JFrame();
+        jFrame2 = new javax.swing.JFrame();
+        jFrame3 = new javax.swing.JFrame();
         jLabel2 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        minutesField = new javax.swing.JTextFieldSomenteNumeros(2);
-        secondsField = new javax.swing.JTextFieldSomenteNumeros(2);
-        jLabel5 = new javax.swing.JLabel();
+        jInternalFrame1 = new javax.swing.JInternalFrame();
         jCmbBoxLogo = new javax.swing.JComboBox<>();
         jButton1 = new javax.swing.JButton();
-        jLabel7 = new javax.swing.JLabel();
         imageLogo = new javax.swing.JLabel();
         timeout = new javax.swing.JLabel();
+        jButtonPausar = new javax.swing.JButton();
+        jButtonIniciar = new javax.swing.JButton();
+        jButtonReiniciar = new javax.swing.JButton();
+        secondsField = new javax.swing.JTextFieldSomenteNumeros(2);
+        minutesField = new javax.swing.JTextFieldSomenteNumeros(2);
+        hoursField = new javax.swing.JTextFieldSomenteNumeros(2);
+        jLabel5 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         VisuAgenda = new javax.swing.JMenuItem();
@@ -165,86 +185,90 @@ public class Panel extends javax.swing.JFrame {
         setTitle("Temporizador TLSA");
         setBackground(new java.awt.Color(255, 255, 255));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        setMinimumSize(new java.awt.Dimension(700, 620));
-        getContentPane().setLayout(null);
-
-        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Reunião");
-        jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(290, 200, 100, 40);
-
-        jButtonIniciar.setBackground(new java.awt.Color(51, 51, 51));
-        jButtonIniciar.setText("Iniciar");
-        jButtonIniciar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonIniciarActionPerformed(evt);
+        setMinimumSize(new java.awt.Dimension(1080, 831));
+        setName("Panel"); // NOI18N
+        setSize(new java.awt.Dimension(1080, 831));
+        addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentResized(java.awt.event.ComponentEvent evt) {
+                formComponentResized(evt);
             }
         });
-        getContentPane().add(jButtonIniciar);
-        jButtonIniciar.setBounds(140, 250, 80, 20);
+        getContentPane().setLayout(new java.awt.GridBagLayout());
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        getContentPane().add(jLabel2, gridBagConstraints);
+
+        jInternalFrame1.setBorder(null);
+        jInternalFrame1.setVisible(true);
+        jInternalFrame1.getContentPane().setLayout(null);
+
+        jCmbBoxLogo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione a empresa", "Nenhuma", "CSN", "TLSA", "FTL" }));
+        jCmbBoxLogo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCmbBoxLogoActionPerformed(evt);
+            }
+        });
+        jInternalFrame1.getContentPane().add(jCmbBoxLogo);
+        jCmbBoxLogo.setBounds(460, 10, 160, 20);
+
+        jButton1.setText("OK");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jInternalFrame1.getContentPane().add(jButton1);
+        jButton1.setBounds(630, 10, 60, 20);
+
+        imageLogo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        imageLogo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        imageLogo.setPreferredSize(new java.awt.Dimension(1080, 720));
+        jInternalFrame1.getContentPane().add(imageLogo);
+        imageLogo.setBounds(440, 40, 270, 140);
+
+        timeout.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
+        timeout.setForeground(new java.awt.Color(255, 0, 0));
+        timeout.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jInternalFrame1.getContentPane().add(timeout);
+        timeout.setBounds(430, 540, 310, 50);
 
         jButtonPausar.setBackground(new java.awt.Color(51, 51, 51));
+        jButtonPausar.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jButtonPausar.setText("Pausar");
         jButtonPausar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonPausarActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonPausar);
-        jButtonPausar.setBounds(300, 250, 80, 20);
+        jInternalFrame1.getContentPane().add(jButtonPausar);
+        jButtonPausar.setBounds(530, 250, 110, 30);
+
+        jButtonIniciar.setBackground(new java.awt.Color(51, 51, 51));
+        jButtonIniciar.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        jButtonIniciar.setText("Iniciar");
+        jButtonIniciar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonIniciarActionPerformed(evt);
+            }
+        });
+        jInternalFrame1.getContentPane().add(jButtonIniciar);
+        jButtonIniciar.setBounds(290, 250, 110, 30);
 
         jButtonReiniciar.setBackground(new java.awt.Color(51, 51, 51));
+        jButtonReiniciar.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jButtonReiniciar.setText("Reiniciar");
         jButtonReiniciar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonReiniciarActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonReiniciar);
-        jButtonReiniciar.setBounds(460, 250, 80, 20);
-
-        hoursField.setBackground(java.awt.SystemColor.controlLtHighlight);
-        hoursField.setFont(new java.awt.Font("Arial", 1, 70)); // NOI18N
-        hoursField.setForeground(new java.awt.Color(0, 0, 0));
-        hoursField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        hoursField.setText("00");
-        hoursField.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        hoursField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                hoursFieldActionPerformed(evt);
-            }
-        });
-        getContentPane().add(hoursField);
-        hoursField.setBounds(110, 280, 140, 110);
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(100, 230, 0, 0);
-
-        jLabel9.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel9.setText("Temporizador");
-        getContentPane().add(jLabel9);
-        jLabel9.setBounds(220, 140, 250, 50);
-
-        minutesField.setBackground(new java.awt.Color(255, 255, 255));
-        minutesField.setFont(new java.awt.Font("Arial", 1, 70)); // NOI18N
-        minutesField.setForeground(new java.awt.Color(0, 0, 0));
-        minutesField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        minutesField.setText("00");
-        minutesField.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        minutesField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                minutesFieldActionPerformed(evt);
-            }
-        });
-        getContentPane().add(minutesField);
-        minutesField.setBounds(270, 280, 140, 110);
+        jInternalFrame1.getContentPane().add(jButtonReiniciar);
+        jButtonReiniciar.setBounds(760, 250, 110, 30);
 
         secondsField.setBackground(new java.awt.Color(255, 255, 255));
-        secondsField.setFont(new java.awt.Font("Arial", 1, 70)); // NOI18N
+        secondsField.setFont(new java.awt.Font("Arial", 1, 100)); // NOI18N
         secondsField.setForeground(new java.awt.Color(0, 0, 0));
         secondsField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         secondsField.setText("00");
@@ -259,46 +283,56 @@ public class Panel extends javax.swing.JFrame {
                 secondsFieldActionPerformed(evt);
             }
         });
-        getContentPane().add(secondsField);
-        secondsField.setBounds(430, 280, 140, 110);
+        jInternalFrame1.getContentPane().add(secondsField);
+        secondsField.setBounds(720, 300, 201, 157);
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/temporizador.png"))); // NOI18N
-        jLabel5.setText("jLabel5");
-        getContentPane().add(jLabel5);
-        jLabel5.setBounds(90, 200, 500, 230);
-
-        jCmbBoxLogo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione a empresa", "Nenhuma", "CSN", "TLSA", "FTL" }));
-        jCmbBoxLogo.addActionListener(new java.awt.event.ActionListener() {
+        minutesField.setBackground(new java.awt.Color(255, 255, 255));
+        minutesField.setFont(new java.awt.Font("Arial", 1, 100)); // NOI18N
+        minutesField.setForeground(new java.awt.Color(0, 0, 0));
+        minutesField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        minutesField.setText("00");
+        minutesField.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        minutesField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCmbBoxLogoActionPerformed(evt);
+                minutesFieldActionPerformed(evt);
             }
         });
-        getContentPane().add(jCmbBoxLogo);
-        jCmbBoxLogo.setBounds(240, 10, 150, 22);
+        jInternalFrame1.getContentPane().add(minutesField);
+        minutesField.setBounds(480, 300, 204, 157);
 
-        jButton1.setText("OK");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        hoursField.setBackground(java.awt.SystemColor.controlLtHighlight);
+        hoursField.setFont(new java.awt.Font("Arial", 1, 100)); // NOI18N
+        hoursField.setForeground(new java.awt.Color(0, 0, 0));
+        hoursField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        hoursField.setText("00");
+        hoursField.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        hoursField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                hoursFieldActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1);
-        jButton1.setBounds(390, 10, 46, 22);
+        jInternalFrame1.getContentPane().add(hoursField);
+        hoursField.setBounds(240, 300, 204, 157);
 
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/CSN_rodapé.png"))); // NOI18N
-        jLabel7.setText("jLabel7");
-        getContentPane().add(jLabel7);
-        jLabel7.setBounds(0, 480, 250, 70);
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/temporizador_t.png"))); // NOI18N
+        jInternalFrame1.getContentPane().add(jLabel5);
+        jLabel5.setBounds(210, 190, 750, 330);
 
-        imageLogo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(imageLogo);
-        imageLogo.setBounds(230, 30, 220, 110);
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/CSN_rodape-.png"))); // NOI18N
+        jLabel3.setText("jLabel3");
+        jInternalFrame1.getContentPane().add(jLabel3);
+        jLabel3.setBounds(380, 620, 400, 110);
 
-        timeout.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        timeout.setForeground(new java.awt.Color(255, 0, 0));
-        timeout.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(timeout);
-        timeout.setBounds(223, 436, 230, 30);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.gridheight = 2;
+        gridBagConstraints.ipadx = 1154;
+        gridBagConstraints.ipady = 747;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 0, 13);
+        getContentPane().add(jInternalFrame1, gridBagConstraints);
 
         jMenu1.setText("Agenda");
 
@@ -343,7 +377,8 @@ public class Panel extends javax.swing.JFrame {
 
         setJMenuBar(jMenuBar1);
 
-        pack();
+        setSize(new java.awt.Dimension(1206, 787));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonIniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonIniciarActionPerformed
@@ -422,7 +457,6 @@ public class Panel extends javax.swing.JFrame {
            secondsField.setDisabledTextColor(Color.RED);
         }
     }//GEN-LAST:event_secondsFieldActionPerformed
-
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         String selectedOption = (String) jCmbBoxLogo.getSelectedItem();
         switch (selectedOption) {
@@ -472,6 +506,10 @@ public class Panel extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
+    private void formComponentResized(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentResized
+
+    }//GEN-LAST:event_formComponentResized
+
     /**
      * @param args the command line arguments
      */
@@ -494,6 +532,12 @@ public class Panel extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(Panel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+
+        // Obtenha a largura e a altura
+        int width = screenSize.width;
+        int height = screenSize.height;
+        
         java.awt.EventQueue.invokeLater(() -> {
             new Panel().setVisible(true);
         });
@@ -510,11 +554,13 @@ public class Panel extends javax.swing.JFrame {
     private javax.swing.JButton jButtonPausar;
     private javax.swing.JButton jButtonReiniciar;
     private javax.swing.JComboBox<String> jCmbBoxLogo;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JFrame jFrame1;
+    private javax.swing.JFrame jFrame2;
+    private javax.swing.JFrame jFrame3;
+    private javax.swing.JInternalFrame jInternalFrame1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;

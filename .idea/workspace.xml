@@ -1,26 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="017800cf-6e87-4159-a34a-3c52f85222b6" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/built-jar.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build/built-jar.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/.netbeans_automatic_build" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/.netbeans_update_resources" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/images/TLSA.png" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/images/TLSA.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/images/ftl.png" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/images/ftl.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/javax/swing/JTextFieldSomenteNumeros$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/javax/swing/JTextFieldSomenteNumeros$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/javax/swing/JTextFieldSomenteNumeros$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/javax/swing/JTextFieldSomenteNumeros$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/javax/swing/JTextFieldSomenteNumeros.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/javax/swing/JTextFieldSomenteNumeros.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/service/ReadFileService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/service/ReadFileService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/temporizador/tlsa2/Agenda$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/temporizador/tlsa2/Agenda$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/temporizador/tlsa2/Agenda$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/temporizador/tlsa2/Agenda$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/temporizador/tlsa2/Agenda$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/temporizador/tlsa2/Agenda$3.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/temporizador/tlsa2/Agenda$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/temporizador/tlsa2/Agenda$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/temporizador/tlsa2/Agenda$5.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/temporizador/tlsa2/Agenda.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/temporizador/tlsa2/Agenda.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/temporizador/tlsa2/Agenda.form" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/temporizador/tlsa2/AgendaTeste$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/temporizador/tlsa2/AgendaTeste$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/temporizador/tlsa2/AgendaTeste$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/temporizador/tlsa2/AgendaTeste$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/temporizador/tlsa2/AgendaTeste$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/temporizador/tlsa2/AgendaTeste$3.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/temporizador/tlsa2/AgendaTeste$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/temporizador/tlsa2/AgendaTeste$4.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/temporizador/tlsa2/AgendaTeste.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/temporizador/tlsa2/AgendaTeste.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/temporizador/tlsa2/AgendaTeste.form" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/temporizador/tlsa2/Panel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/temporizador/tlsa2/Panel$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/temporizador/tlsa2/Panel$10.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/temporizador/tlsa2/Panel$10.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/temporizador/tlsa2/Panel$11.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/temporizador/tlsa2/Panel$11.class" afterDir="false" />
@@ -28,8 +31,6 @@
       <change beforePath="$PROJECT_DIR$/build/classes/temporizador/tlsa2/Panel$13.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/temporizador/tlsa2/Panel$13.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/temporizador/tlsa2/Panel$14.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/temporizador/tlsa2/Panel$14.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/temporizador/tlsa2/Panel$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/temporizador/tlsa2/Panel$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/temporizador/tlsa2/Panel$27.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/temporizador/tlsa2/Panel$28.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/temporizador/tlsa2/Panel$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/temporizador/tlsa2/Panel$3.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/temporizador/tlsa2/Panel$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/temporizador/tlsa2/Panel$4.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/temporizador/tlsa2/Panel$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/temporizador/tlsa2/Panel$5.class" afterDir="false" />
@@ -38,17 +39,14 @@
       <change beforePath="$PROJECT_DIR$/build/classes/temporizador/tlsa2/Panel$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/temporizador/tlsa2/Panel$8.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/temporizador/tlsa2/Panel$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/temporizador/tlsa2/Panel$9.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/temporizador/tlsa2/Panel.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/temporizador/tlsa2/Panel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/temporizador/tlsa2/Panel.form" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/temporizador/tlsa2/TimerApp$1$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/temporizador/tlsa2/TimerApp$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/temporizador/tlsa2/TimerApp$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/temporizador/tlsa2/TimerApp$3.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/temporizador/tlsa2/VisuAgenda$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/temporizador/tlsa2/VisuAgenda$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/temporizador/tlsa2/VisuAgenda$2.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/temporizador/tlsa2/VisuAgenda.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/temporizador/tlsa2/VisuAgenda.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/temporizador/tlsa2/VisuAgenda.form" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/Temporizador.jar" beforeDir="false" afterPath="$PROJECT_DIR$/dist/Temporizador.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/nbproject/private/private.xml" beforeDir="false" afterPath="$PROJECT_DIR$/nbproject/private/private.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nbproject/project.properties" beforeDir="false" afterPath="$PROJECT_DIR$/nbproject/project.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/images/CSN_rodapé.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/images/TLSA.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/images/ftl.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/temporizador/tlsa2/Agenda.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/temporizador/tlsa2/Agenda.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/temporizador/tlsa2/Agenda.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/temporizador/tlsa2/Agenda.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/temporizador/tlsa2/Panel.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/temporizador/tlsa2/Panel.form" afterDir="false" />
@@ -61,6 +59,9 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="2X1yIZSIFi3b83GLAgr0wJpgZFJ" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -72,6 +73,10 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "C:/Programas/Projetos/Temporizador TLSA2",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -84,6 +89,8 @@
       <option name="presentableId" value="Default" />
       <updated>1697810801993</updated>
       <workItem from="1697810803051" duration="68000" />
+      <workItem from="1698081611439" duration="19000" />
+      <workItem from="1698242961978" duration="1171000" />
     </task>
     <servers />
   </component>
