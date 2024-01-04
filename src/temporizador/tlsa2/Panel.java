@@ -38,7 +38,7 @@ public class Panel extends javax.swing.JFrame {
  
     public Panel() {
         initComponents();
-        this.setIconImage(new javax.swing.ImageIcon(getClass().getResource("/images/icone-TLSA.jpg")).getImage());
+        //this.setIconImage(new javax.swing.ImageIcon(getClass().getResource("/images/icone-TLSA.jpg")).getImage());
         SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
       //  dataLabel.setText(formato.format(dataSistema));
       
@@ -319,9 +319,8 @@ public class Panel extends javax.swing.JFrame {
         jLabel5.setBounds(210, 190, 750, 330);
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/CSN_rodape-.png"))); // NOI18N
-        jLabel3.setText("jLabel3");
         jInternalFrame1.getContentPane().add(jLabel3);
-        jLabel3.setBounds(380, 620, 400, 110);
+        jLabel3.setBounds(400, 610, 370, 110);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -457,6 +456,34 @@ public class Panel extends javax.swing.JFrame {
            secondsField.setDisabledTextColor(Color.RED);
         }
     }//GEN-LAST:event_secondsFieldActionPerformed
+
+    private void VisuAgendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VisuAgendaActionPerformed
+       VisuAgenda agenda = new VisuAgenda(new ReadFileService().read());
+        
+      //  AgendaTeste at = new AgendaTeste();
+        agenda.setVisible(true);
+       
+    }//GEN-LAST:event_VisuAgendaActionPerformed
+
+    private void EdiAgendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EdiAgendaActionPerformed
+
+        Agenda ag = new Agenda(new ReadFileService().read());
+        ag.setVisible(true);
+    }//GEN-LAST:event_EdiAgendaActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void formComponentResized(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentResized
+
+    }//GEN-LAST:event_formComponentResized
+
+    private void EditarEmpresaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditarEmpresaActionPerformed
+        jCmbBoxLogo.setVisible(true);
+        jButton1.setVisible(true);
+    }//GEN-LAST:event_EditarEmpresaActionPerformed
+
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         String selectedOption = (String) jCmbBoxLogo.getSelectedItem();
         switch (selectedOption) {
@@ -480,35 +507,7 @@ public class Panel extends javax.swing.JFrame {
     private void jCmbBoxLogoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCmbBoxLogoActionPerformed
         String[] options = {"Nenhuma", "CSN", "TLSA", "FTL"};
         JComboBox<String> comboBox = new JComboBox<>(options);
-
     }//GEN-LAST:event_jCmbBoxLogoActionPerformed
-
-    private void EditarEmpresaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditarEmpresaActionPerformed
-        jCmbBoxLogo.setVisible(true);
-        jButton1.setVisible(true);
-    }//GEN-LAST:event_EditarEmpresaActionPerformed
-
-    private void VisuAgendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VisuAgendaActionPerformed
-       VisuAgenda agenda = new VisuAgenda(new ReadFileService().read());
-        
-      //  AgendaTeste at = new AgendaTeste();
-        agenda.setVisible(true);
-       
-    }//GEN-LAST:event_VisuAgendaActionPerformed
-
-    private void EdiAgendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EdiAgendaActionPerformed
-
-        Agenda ag = new Agenda(new ReadFileService().read());
-        ag.setVisible(true);
-    }//GEN-LAST:event_EdiAgendaActionPerformed
-
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        System.exit(0);
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
-
-    private void formComponentResized(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentResized
-
-    }//GEN-LAST:event_formComponentResized
 
     /**
      * @param args the command line arguments
